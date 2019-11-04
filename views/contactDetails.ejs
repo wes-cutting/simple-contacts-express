@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <% if (typeof contact != 'undefined') { %>
+        <h1><%= title %> of <%= contact.name %></h1>
+        <ul style='list-style: none;'>
+            <li>Email: <%= contact.email%></li>
+            <li>Phone: <%= contact.phone%></li>
+        </ul>
+    <% } else { %>
+        <p>Friend doesn't exist</p>
+    <% } %>
+    <p>Go to <a href='../'>Home</a></p>
+    <p>Go to <a href='./'>Contacts</a></p>
+</body>
+
+</html>
