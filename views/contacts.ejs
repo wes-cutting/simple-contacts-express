@@ -12,7 +12,7 @@
     <% if (typeof contacts != 'undefined') { %>
         <ul>
             <% for(let i = 0; i < contacts.length; i++) { %>
-                <li><a href='./friends/<%= contacts[i].name %>'><%= contacts[i].name %></a></li>
+                <li><a href='./<%= contacts[i].name %>'><%= contacts[i].name %></a></li>
             <% } %>
         </ul>
     <% } else { %>
