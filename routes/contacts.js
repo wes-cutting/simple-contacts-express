@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const { getContacts, createContact } = require('../data/mongo/contacts')
+const { getContacts } = require('../data/mongo/contacts')
 
 /* GET Contacts page. */
 router.get('/', async (req, res, next) => {
@@ -11,17 +11,6 @@ router.get('/', async (req, res, next) => {
         contacts
      });
 });
-
-router.get('/data', async (req, res, next) => {
-    const results = await getContacts()
-    res.send(results)
-})
-
-router.post('/data', async (req, res, next) => {
-    const body = req.body
-    const result = await createContact(body)
-    res.send(result)
-})
 
 /* GET Contact Details page. */
 router.get('/:name', async (req, res, next) => {
