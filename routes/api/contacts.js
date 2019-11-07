@@ -3,6 +3,7 @@ var router = express.Router();
 const { 
     getContacts, 
     createContact,
+    updateContact,
     deleteContact 
 } = require('../../data/mongo/contacts')
 
@@ -14,6 +15,12 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     const body = req.body
     const result = await createContact(body)
+    res.send(result)
+})
+
+router.put('/:id', async (req, res, next) => {
+    const body = req.body
+    const result = await updateContact(body, req.params.id)
     res.send(result)
 })
 
